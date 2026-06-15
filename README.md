@@ -4,6 +4,8 @@ A harmless Python prank application that simulates a fake Windows Blue Screen of
 
 The program creates a fullscreen overlay, plays sound effects, displays a sequence of custom BSOD images, and opens a webcam face-detection window for additional prank effects.
 
+<img width="850" height="601" alt="bsod11" src="https://github.com/user-attachments/assets/62af29df-5826-42df-af23-a06534435145" />
+
 ## Features
 
 * Fake BSOD screen simulation
