@@ -36,7 +36,7 @@ The application:
 ### Python Libraries
 
 ```bash
-pip install pyautogui pillow opencv-python numpy keyboard comtypes pycaw mediapipe
+pip install pyautogui pillow opencv-python numpy keyboard comtypes pycaw mediapipe --upgrade
 ```
 
 ## Project Structure
