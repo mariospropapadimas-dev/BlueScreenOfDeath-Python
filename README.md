@@ -32,6 +32,7 @@ The application:
 
 * Python 3.9+
 * Windows
+* A connected webcam
 
 ### Python Libraries
 
@@ -65,6 +66,24 @@ BlueScreenOfDeath-Python/
 ```bash
 python Main.py
 ```
+
+## ⚠️ How To Stop The Program
+
+Once the prank sequence starts (after you click the screen), the app blocks `Ctrl`, `Alt`, `Win`, and `Delete` system-wide and keeps its window fullscreen and always-on-top. This means the usual escape routes are disabled:
+
+* `Ctrl+Alt+Del` / `Ctrl+Shift+Esc` (Task Manager) — blocked
+* `Alt+F4` — blocked
+* `Win+D` / Start menu — blocked
+
+Pressing `ESC` only closes the small webcam preview window, not the main BSOD screen.
+
+The sequence is designed to end on its own after the final animation, but if you need to stop it immediately, you'll need to kill the process another way, for example:
+
+* End the `python.exe` / `Main.py` process from another machine over the network (e.g. `psexec`, SSH, or remote desktop).
+* Use a scheduled task, startup script, or second account session to run `taskkill /IM python.exe /F`.
+* As a last resort, force a shutdown/restart via the power button.
+
+Because of this, only run the prank on a machine (and with input, like a webcam) you own or have explicit permission to use, and consider having a way to terminate the process remotely before you start it.
 
 ## Disclaimer
 
