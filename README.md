@@ -36,7 +36,7 @@ The application:
 ### Python Libraries
 
 ```bash
-pip install pyautogui pillow opencv-python numpy keyboard comtypes pycaw mediapipe --upgrade
+pip install pyautogui pillow opencv-python numpy keyboard --upgrade
 ```
 
 ## Project Structure
@@ -55,10 +55,10 @@ BlueScreenOfDeath-Python/
 ├── noise2.wav
 ├── noise3.wav
 ├── loop.wav
-├── sound1.wav
-│
-└── desktop.png
+└── sound1.wav
 ```
+
+> `desktop.png` is generated at runtime (a screenshot of your desktop) and is not part of the repository.
 
 ## How To Run
 
