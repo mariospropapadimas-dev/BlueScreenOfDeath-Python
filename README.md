@@ -69,21 +69,23 @@ python Main.py
 
 ## ⚠️ How To Stop The Program
 
-Once the prank sequence starts (after you click the screen), the app blocks `Ctrl`, `Alt`, `Win`, and `Delete` system-wide and keeps its window fullscreen and always-on-top. This means the usual escape routes are disabled:
+Once the prank sequence starts (after you click the screen), the app tries to block `Ctrl`, `Alt`, `Win`, and `Delete` system-wide and keeps its window fullscreen and always-on-top. This means most of the usual escape routes are disabled:
 
-* `Ctrl+Alt+Del` / `Ctrl+Shift+Esc` (Task Manager) — blocked
+* `Ctrl+Shift+Esc` (Task Manager) — blocked
 * `Alt+F4` — blocked
 * `Win+D` / Start menu — blocked
 
+**`Ctrl+Alt+Del` still works, though.** Windows treats it as the Secure Attention Sequence (SAS) and handles it at the OS/WinLogon level, below where user-mode hooks like the `keyboard` library operate — it's a Windows security feature specifically meant to stop malware from intercepting that combination. So even though the app blocks `Ctrl`, `Alt`, and `Delete` individually, pressing all three together still brings up the secure desktop / Task Manager screen, and that's your main safety net if you need to bail out.
+
 Pressing `ESC` only closes the small webcam preview window, not the main BSOD screen.
 
-The sequence is designed to end on its own after the final animation, but if you need to stop it immediately, you'll need to kill the process another way, for example:
+The sequence is designed to end on its own after the final animation, but if you need to stop it immediately:
 
+* Press `Ctrl+Alt+Del` and open Task Manager from there to end `python.exe`.
 * End the `python.exe` / `Main.py` process from another machine over the network (e.g. `psexec`, SSH, or remote desktop).
-* Use a scheduled task, startup script, or second account session to run `taskkill /IM python.exe /F`.
 * As a last resort, force a shutdown/restart via the power button.
 
-Because of this, only run the prank on a machine (and with input, like a webcam) you own or have explicit permission to use, and consider having a way to terminate the process remotely before you start it.
+Because of this, only run the prank on a machine (and with input, like a webcam) you own or have explicit permission to use.
 
 ## Disclaimer
 
